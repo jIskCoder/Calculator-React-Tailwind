@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../../context/ThemeContext";
 import themes from "../../shared/themes";
 
-function SecondaryButton({ text = "", theme = "blue", size = "big", equal = false }) {
+function SecondaryButton({ text = "", size = "big", equal = false }) {
+  const { theme } = useContext(ThemeContext);
   const currentTheme = themes.find((t) => t.name === theme) || themes[0];
 
   const sizeClasses =
-    size === "big" ? "w-[133px] sm:w-[227px] h-[64px] text-[20px] sm:text[28px]" : "w-[60px] sm:w-[101px] h-[60px]";
+    size === "big" ? "w-[133px] sm:w-[227px] h-[60px] text-[20px] sm:text[28px]" : "w-[60px] sm:w-[101px] h-[60px]";
   const equalButton = equal
     ? `${currentTheme.buttonEqualbg} ${currentTheme.shadowButtonEqual} ${currentTheme.buttonEqualHover}`
     : `${currentTheme.buttonSecondarybg} ${currentTheme.shadowButtonSecondary} ${currentTheme.buttonSecondaryHover}`;

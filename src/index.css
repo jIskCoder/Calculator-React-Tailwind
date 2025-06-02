@@ -306,7 +306,7 @@
   --color-silver-hover: #dbe8ed;
 
   --color-main-1: #3a4663;
-  --color-main-2: #e6e6e6;
+  --color-main-2: #d2cdcd;
   --color-main-3: #17062a;
 
   --color-secondary-1: #242d44;
@@ -321,9 +321,9 @@
   --color-button-hover-2: #ffffff;
   --color-button-hover-3: #6c34ac;
 
-  --color-button-shadow-1: #B3A497;
-  --color-button-shadow-2: #A79E91;
-  --color-button-shadow-3: #881C9E;
+  --color-button-shadow-1: #b3a497;
+  --color-button-shadow-2: #a79e91;
+  --color-button-shadow-3: #881c9e;
 
   --color-button-secondary-bg-1: #647198;
   --color-button-secondary-bg-2: #378187;
@@ -333,9 +333,9 @@
   --color-button-secondary-hover-2: #62b5bc;
   --color-button-secondary-hover-3: #8631af;
 
-  --color-button-secondary-shadow-1: #414E73;
-  --color-button-secondary-shadow-2: #1B6066;
-  --color-button-secondary-shadow-3: #BE15F4;
+  --color-button-secondary-shadow-1: #414e73;
+  --color-button-secondary-shadow-2: #1b6066;
+  --color-button-secondary-shadow-3: #be15f4;
 
   --color-button-text-secondary: #ffffff;
 
@@ -347,13 +347,41 @@
   --color-button-equal-hover-2: #ff8a38;
   --color-button-equal-hover-3: #93fff8;
 
-  --color-button-equal-shadow-1: #93261A;
-  --color-button-equal-shadow-2: #93261A;
-  --color-button-equal-shadow-3: #6CF9F1;
+  --color-button-equal-shadow-1: #93261a;
+  --color-button-equal-shadow-2: #93261a;
+  --color-button-equal-shadow-3: #6cf9f1;
 
   --color-text-1: #434a59;
   --color-text-2: #36362c;
   --color-text-3: #ffe53d;
+
+  --color-calculation-bg-1: #181f33;
+  --color-calculation-bg-2: #eeeeee;
+  --color-calculation-bg-3: #1e0936;
+
+  --color-calculation-text-1: #ffffff;
+  --color-calculation-text-2: #36362c;
+  --color-calculation-text-3: #ffe53d;
+
+  --color-toggle-theme-bg-1: #242d44;
+  --color-toggle-theme-bg-2: #378187;
+  --color-toggle-theme-bg-3: #1e0936;
+
+  --color-toggle-Button-1: #d03f2f;
+  --color-toggle-Button-2: #c85402;
+  --color-toggle-Button-3: #00ded0;
+}
+
+.theme-blue {
+  --color-main-bg: var(--color-main-1);
+}
+
+.theme-white {
+  --color-main-bg: var(--color-main-2);
+}
+
+.theme-purple {
+  --color-main-bg: var(--color-main-3);
 }
 
 @font-face {
@@ -371,7 +399,7 @@
 }
 
 body {
-  background-color: var(--color-main-1);
+  background-color: var(--color-main-bg);
   @apply flex flex-col items-center justify-center min-h-screen;
   font-family: "LeagueSpartan", sans-serif;
 }

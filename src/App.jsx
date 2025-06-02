@@ -1,12 +1,15 @@
 import { useState } from "react";
-import ButtonsContainer from "./components/ui/containers/ButtonsContainer";
+import MainContainer from "./components/ui/containers/MainContainer";
+import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <ButtonsContainer theme="purple"/>
+      <ThemeProvider>
+        <MainContainer />
+      </ThemeProvider>
     </>
   );
 }
