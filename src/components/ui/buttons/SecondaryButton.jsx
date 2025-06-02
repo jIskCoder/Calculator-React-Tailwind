@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ThemeContext } from "../../../context/ThemeContext";
 import themes from "../../shared/themes";
 
-function SecondaryButton({ text = "", size = "big", equal = false }) {
+function SecondaryButton({ text = "", size = "big", equal = false, onClick }) {
   const { theme } = useContext(ThemeContext);
   const currentTheme = themes.find((t) => t.name === theme) || themes[0];
 
@@ -14,6 +14,7 @@ function SecondaryButton({ text = "", size = "big", equal = false }) {
 
   return (
     <button
+      onClick={() => onClick(text)}
       className={`flex items-center justify-center ${sizeClasses} rounded-[5px] font-bold uppercase
         ${equalButton} ${currentTheme.buttonTextSecondary} cursor-pointer`}
     >

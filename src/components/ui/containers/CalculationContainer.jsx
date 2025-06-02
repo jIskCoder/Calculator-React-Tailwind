@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ThemeContext } from "../../../context/ThemeContext";
 import themes from "../../shared/themes";
 
-function CalculationContainer({}) {
+function CalculationContainer({ calculation = '0'}) {
   const { theme } = useContext(ThemeContext);
   const currentTheme = themes.find((t) => t.name === theme) || themes[0];
   return (
@@ -10,7 +10,7 @@ function CalculationContainer({}) {
       className={`flex items-center justify-end text-[40px] sm:text-[56px] text-right 
     py-7 px-6 sm:py-10 sm:px-8 rounded-xl h-[88px] sm:h-[128px] font-bold tracking-[-0.6704px] ${currentTheme.calculationText} ${currentTheme.calculationBg}`}
     >
-      122,987
+      {calculation}
     </div>
   );
 }
