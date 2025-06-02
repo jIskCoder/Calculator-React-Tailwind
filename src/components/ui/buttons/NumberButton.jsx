@@ -9,7 +9,7 @@ function NumberButton({ text = "", onClick }) {
   return (
     <button
       onClick={() => onClick(text)}
-      className={`flex items-center justify-center w-[60px] h-[60px] sm:w-[101px] rounded-[5px] text-3xl font-bold 
+      className={`flex items-center justify-center w-[3.75rem] h-[3.75rem] sm:w-[6.3125rem] rounded-[0.3125rem] text-3xl font-bold 
         ${currentTheme.bgButton} ${currentTheme.text} ${currentTheme.hover} ${currentTheme.shadowButton} cursor-pointer`}
     >
       {text}
