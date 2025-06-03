@@ -3,17 +3,23 @@ name: CI/CD with Self-Hosted Runner
 on:
   push:
     branches:
-      - main
+      - main  # or 'dev' branch if preferred
 
 jobs:
   deploy:
     runs-on: self-hosted
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Build and Deploy
-        run: |
-          git pull origin main
-          npm install
-          npm run dev
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'  # Change as needed
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Dev Environment
+        run: npm run dev
