@@ -1,25 +1,26 @@
-name: CI/CD with Self-Hosted Runner
+name: Deploy Node App
 
 on:
   push:
-    branches:
-      - main  # or 'dev' branch if preferred
+    branches: [main]
 
 jobs:
   deploy:
     runs-on: self-hosted
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '18'  # Change as needed
+          node-version: '18'
 
-      - name: Install dependencies
-        run: npm install
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build  # if frontend
 
-      - name: Run Dev Environment
-        run: npm run dev
+      - run: npm install -g pm2
+      - run: |
+          pm2 delete app || true
+          pm2 start npm --name "app" -- run start
