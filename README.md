@@ -1,6 +1,6 @@
-# KoxCalculator - React + Tailwind Themed Calculator
+# Calculator - React + Tailwind Themed Calculator
 
-KoxCalculator is a modern, responsive calculator with multiple theme support, built using React and Tailwind CSS.
+Calculator is a modern, responsive calculator with multiple theme support, built using React and Tailwind CSS.
 
 ---
 
@@ -28,8 +28,8 @@ KoxCalculator is a modern, responsive calculator with multiple theme support, bu
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/KoxCalculator.git
-   cd KoxCalculator
+   git clone https://github.com/Koxone/Calculator-React-Tailwind.git
+   cd Calculator-React-Tailwind
    ```
 
 2. **Install dependencies:**
@@ -52,7 +52,7 @@ KoxCalculator is a modern, responsive calculator with multiple theme support, bu
 ## 🧩 Project Structure
 
 ```
-KoxCalculator/
+Calculator/
 ├── components/
 │   └── ui/
 │       ├── containers/           # Main containers (Header, Main, Buttons, etc.)
