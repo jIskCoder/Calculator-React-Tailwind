@@ -1,9 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ThemeContext } from "../../../context/ThemeContext";
 import themes from "../../shared/themes";
 
 function ToggleThemeButton() {
-  const { theme } = useContext(ThemeContext);
+  const [toglePosition, setTogglePosition] = useState(0);
+  const themeOrder = ["blue", "white", "purple"];
+
+  const handleClick = () => {
+    setTogglePosition((prev) => {
+      const next = (prev + 1) % 3;
+      setTheme(themeOrder[next]);
+      return next;
+    });
+  };
+
+  const { theme, setTheme } = useContext(ThemeContext);
   const currentTheme = themes.find((t) => t.name === theme) || themes[0];
   return (
     <div className="flex items-end justify-between w-[8.6875rem]">
@@ -15,10 +26,15 @@ function ToggleThemeButton() {
           <p>3</p>
         </div>
         <div
-          className={`flex items-center w-[4.4375rem] h-[1.625rem] border-transparent rounded-[0.8125rem] p-[0.3125rem] relative ${currentTheme.toggleThemeBg}`}
+          className={`flex items-center w-[4.4375rem] h-[1.625rem]
+             border-transparent rounded-[0.8125rem] p-[0.3125rem] relative ${currentTheme.toggleThemeBg}`}
         >
           <button
-            className={`w-4 h-4 border-transparent rounded-full cursor-pointer absolute ${currentTheme.toggleThemeButton}`}
+            onClick={handleClick}
+            className={`w-4 h-4 border-transparent rounded-full cursor-pointer absolute transition-all duration-300 ease-in-out
+              ${currentTheme.toggleThemeButton} ${
+              toglePosition === 0 ? "left-1" : toglePosition === 1 ? "left-7" : "right-1"
+            }`}
           />
         </div>
       </div>
