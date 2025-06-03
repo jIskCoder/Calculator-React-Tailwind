@@ -19,6 +19,8 @@ jobs:
       - run: npm run build  # if frontend
 
       - run: npm install -g pm2
+      - run: npm install --save serve
+
       - run: |
           pm2 delete app || true
           pm2 start npm --name "app" -- run start
